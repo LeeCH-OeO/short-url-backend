@@ -12,7 +12,7 @@ const generateID = () => {
 };
 
 app.get("/", (req, res) => {
-  res.send("Hello World!!");
+  res.redirect(301, "https://short.ch-lee.xyz/");
 });
 app.get("/:id", async (req, res) => {
   const urlID = req.params.id;
@@ -20,7 +20,7 @@ app.get("/:id", async (req, res) => {
   if (result) {
     res.redirect(301, result);
   } else {
-    res.redirect(301, "https://shorturl-38fe1.web.app/");
+    res.redirect(301, "https://short.ch-lee.xyz/");
   }
 });
 app.post("/api/short", (req, res) => {
