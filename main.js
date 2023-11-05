@@ -31,15 +31,7 @@ app.post("/api/short", (req, res) => {
   dbSaveUrl(reqUrl, id);
   res.status(200).json({ id: id });
 });
-app.post("/api/query", async (req, res) => {
-  const reqQuery = req.body.id;
-  const result = await dbQueryUrl(reqQuery);
-  if (result) {
-    res.status(302).json({ result: result });
-  } else {
-    res.sendStatus(500);
-  }
-});
+
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Example app `);
 });
