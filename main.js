@@ -33,5 +33,5 @@ app.post("/api/short", (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`Example app `);
+  console.log("Link start!");
 });
