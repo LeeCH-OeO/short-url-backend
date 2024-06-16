@@ -1,0 +1,7 @@
+app.yaml
+.git
+.gitignore
+node_modules/
+.gcloudignore
+.dockerignore
+Dockerfile
