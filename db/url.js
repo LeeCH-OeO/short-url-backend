@@ -9,14 +9,12 @@ async function dbSaveUrl(originUrl, shortId) {
     shortId: shortId,
   });
   const res = await shortUrl.save();
-  console.log(res);
 }
 async function dbQueryUrl(shortId) {
   const result = await UrlSchema.findOne({ shortId: shortId });
   if (result) {
     return result.originUrl;
   } else {
-    console.log("not found");
     return false;
   }
 }
