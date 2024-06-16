@@ -1,4 +1,4 @@
-import express, { json } from "express";
+import express from "express";
 import { nanoid } from "nanoid";
 import cors from "cors";
 import { dbSaveUrl, dbQueryUrl } from "./db/url.js";
@@ -25,13 +25,11 @@ app.get("/:id", async (req, res) => {
 });
 app.post("/api/short", (req, res) => {
   const reqUrl = req.body.url;
-
-  console.log(reqUrl);
   const id = generateID(8);
   dbSaveUrl(reqUrl, id);
   res.status(200).json({ id: id });
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 1212, () => {
   console.log("Link start!");
 });
