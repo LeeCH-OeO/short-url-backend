@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
-import "dotenv/config";
 import { UrlSchema } from "./urlSchema.js";
-const mongoDbUrl = process.env.MONGO_URL;
-mongoose.connect(mongoDbUrl);
+mongoose.connect(process.env.MONGO_URL);
 async function dbSaveUrl(originUrl, shortId) {
   const shortUrl = new UrlSchema({
     originUrl: originUrl,
